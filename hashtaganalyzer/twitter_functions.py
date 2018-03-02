@@ -2,7 +2,7 @@
 import tweepy
 from hashtagproject.settings import TWITTER_FEED_OPEN_AUTH_SECRET, TWITTER_FEED_CONSUMER_PUBLIC_KEY, \
     TWITTER_FEED_CONSUMER_SECRET, TWITTER_FEED_OPEN_AUTH_TOKEN
-def get_tweets():
+def get_tweets(hashtag):
     consumer_key = TWITTER_FEED_CONSUMER_PUBLIC_KEY
     consumer_secret = TWITTER_FEED_CONSUMER_SECRET
     access_token = TWITTER_FEED_OPEN_AUTH_TOKEN
@@ -19,8 +19,9 @@ def get_tweets():
     #     print(tweet.text)
 
     limit = 30
+    full_hashtag = '%23' +  hashtag
     results = []
-    for tweet in tweepy.Cursor(api.search, q='%23freethenipple -filter:retweets', tweet_mode='extended').items(limit):
+    for tweet in tweepy.Cursor(api.search, q= full_hashtag + ' -filter:retweets', tweet_mode='extended').items(limit):
         results.append(tweet.full_text)
     return results
 

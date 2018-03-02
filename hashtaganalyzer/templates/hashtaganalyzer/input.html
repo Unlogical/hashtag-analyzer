@@ -8,8 +8,9 @@
     <header>Twitter analyzer</header>
     <div class="description">Write down hashtag</div>
     <form method="POST">
+        {% csrf_token %}
         <p>#</p>
-        <input type="text" placeholder="hashtag">
+        {{ form.as_p }}
         <button type="submit">Search</button>
 
     </form>
