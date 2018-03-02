@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'twitter_feed',
     'hashtaganalyzer',
 ]
 
@@ -101,6 +103,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+TWITTER_FEED_CONSUMER_PUBLIC_KEY = 's21Y58X3Dj4Jd6vFqYHzWhbcK'
+TWITTER_FEED_CONSUMER_SECRET = 'jBJmVhufc7WJZdhstsnhDEyoAte3ng5xgsF7RYjs59ZdWSXdb2'
+TWITTER_FEED_OPEN_AUTH_TOKEN = '598709320-dDJTBLLbtExBZZto1ulDiZ4oZGOJYKnypG6y0n5V'
+TWITTER_FEED_OPEN_AUTH_SECRET = 'aIQEUMkKQE2SX8VSRP66hWkynRAXTLmjStbZUzy3sUwIm'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
