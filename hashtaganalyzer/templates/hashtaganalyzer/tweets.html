@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/tweets.css' %}">
+    <title>Tweets</title>
+</head>
+<body>
+{% for tweet in tweets %}
+    <div class="tweets">{{tweet}}</div>
+
+{% endfor %}
+</body>
+</html>
