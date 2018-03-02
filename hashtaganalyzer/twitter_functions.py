@@ -18,9 +18,9 @@ def get_tweets():
     # for tweet in public_tweets:
     #     print(tweet.text)
 
-
+    limit = 30
     results = []
-    for tweet in tweepy.Cursor(api.search, q='%23freethenipple').items(20):
-        results.append(tweet.text)
+    for tweet in tweepy.Cursor(api.search, q='%23freethenipple -filter:retweets', tweet_mode='extended').items(limit):
+        results.append(tweet.full_text)
     return results
 
