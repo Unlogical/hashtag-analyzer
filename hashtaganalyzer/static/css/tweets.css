@@ -1,17 +1,85 @@
+body {
+	margin: 0;
+	padding: 0;
+}
 
+header {
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	color: rgba(255,255,255, 0.7);
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+
+}
+
+
+header a{
+	display: block;
+	background-color: rgba(0,0,0, 0.4);
+	width: 100%;
+	height: 100%;
+	padding-top: 15px;
+}
+
+header a:hover {
+	color: rgba(255,255,255, 0.9);
+	background-color: rgba(0,0,0, 0.5);
+}
+
+.hashtag-word {
+	font-size: 32px;
+}
+
+.background {
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/dark.jpg");
+	background-size:  100%;
+	background-repeat: no-repeat;
+	position: fixed;
+}
+
+.tweets-col {
+	width: 30%;
+	height: 100%;
+	background-color: rgba(0,0,0, 0.0); 
+	margin-left: 2.5%;
+	float: left;
+	color: rgba(255,255,255, 0.9);
+}
+
+
+.pos-tweets,
+.neg-tweets,
+.neu-tweets {
+	margin-bottom: 30px;
+	float: left;
+	width: 94%;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	padding: 3%;
+}
+
+.count {
+	margin-bottom: 10px;
+}
 
 .pos-tweets {
-	margin: 30px;
-	background-color: #afa;
-	width: 300px;
+	background-color: rgba(0,80,0, 0.5);
 }
 
 .neu-tweets {
-	background-color: #aaf;
-	width: 300px;
+	background-color: rgba(20,20,20, 0.6);
 }
 
 .neg-tweets {
-	background-color: #faa;
-	width: 300px;
+	background-color: rgba(80,0,0, 0.5);
 }

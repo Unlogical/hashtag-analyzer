@@ -7,9 +7,11 @@
     <title>Search</title>
 </head>
 <body>
-<header><a href="/">Twitter analyzer</a></header>
+<header>
+    <a href="/">Twitter analyzer</a>
+</header>
+    <div class="description">Write some hashtag in the input below and you will see around 100 tweets (may be less), sorted by polarity (positive, neutral, negative)</div>
     <div class="content">
-        <div class="description">Write down hashtag</div>
         <form method="POST" class="search-form">
             {% csrf_token %}
             <p class="hash">#</p>

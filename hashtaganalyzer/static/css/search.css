@@ -29,6 +29,7 @@ header a{
 	display: block;
 	width: 100%;
 	height: 100%;
+	padding-left: 10px;
 }
 
 header a:hover {
@@ -36,12 +37,20 @@ header a:hover {
 	background-color: rgba(0,0,0, 0.5);
 }
 
+.description {
+	float: right;
+	margin-top: -30px;
+	margin-right: 10px;
+	color: rgba(255,255,255, 0.8);
+	font-size: 20px;
+}
+
 .content {
-	width: 800px;
+	width: 500px;
 	height: 260px;
 	margin: auto;
-	margin-top: 80px;
-	background-color: rgba(255,255,255, 0.7);
+	margin-top: 0;
+	background-color: rgba(255,255,255, 0.0);
 	padding: 40px;
 }
 
@@ -49,23 +58,29 @@ header a:hover {
 	display: block;
 	width: 500px;
 	margin: auto;
-	margin-top: 50px;
+	margin-top: 15%;
 }
 
 .search-form input {
 	display: inline-block;
 	float: left;
-	background-color: #fff;
+	background-color: rgba(255,255,255, 0.7);
+	border: 0px;
 	width: 400px;
 	height: 50px;
 	font-size: 40px;
-	margin-top: 30px;
+	margin-top: 40px;
+	padding: 5px 10px;
+	outline: none;
 }
 
 .hash {
 	display: inline-block;
 	float: left;
-	font-size: 100px;
+	font-size: 120px;
+	font-weight: bold;
+	margin-right: 10px;
+	color: rgba(255,255,255, 0.8);
 }
 
 .search-button {
@@ -74,14 +89,76 @@ header a:hover {
 	width: 200px;
 	height: 70px;
 	font-size: 50px;
-	background-color: rgba(0,0,0, 0.2);
-	color: rgba(0,0,0, 0.7);
+	background-color: rgba(0,0,0, 0.3);
+	color: rgba(255,255,255, 0.8);
 	border: 0px;
-	margin-top: 50px;
-	margin-right: -150px;
+	margin-top: 30px;
+	margin-right: 120px;
 }
 
 .search-button:hover {
-	background-color: rgba(0,0,0, 0.3);
-	color: rgba(0,0,0, 0.9);
+	background-color: rgba(0,0,0, 0.7);
+	color: rgba(255,255,255, 0.9);
+	cursor: pointer;
+}
+
+@media(max-width: 1000px) {
+	body {
+		height: 100%;
+		background-image: url("../images/smallwellpaper.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		margin: 0;
+		padding: 0;
+	}
+	header {
+		font-size: 120px;
+		height: 500px;
+	}
+	header a{
+		height: 100%;
+		padding-left: 10px;
+	}
+
+	.description {
+		margin-top: -200px;
+		float: right;
+		font-size: 30px;
+		text-align: right;
+	}
+	.content {
+		margin: 0;
+		width: 100%;
+	}
+	.search-form {
+		width: 900px;
+		margin-left: 0;
+		margin-top: 15%;
+	}
+	.search-form input {
+		width: 710px;
+		height: 100px;
+		font-size: 80px;
+		margin-top: 70px;
+		margin-left: 0px;
+		padding: 5px 10px;
+	}
+	.hash {
+		margin-top: 10px;
+		margin-right: 30px;
+		margin-left: 0px;
+		font-size: 200px;
+	}
+
+
+	.search-button {
+		width: 100%;
+		height: 180px;
+		font-size: 120px;
+		margin-top: 200px;
+		margin-right: 0px;
+	}
+
 }

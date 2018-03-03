@@ -7,16 +7,45 @@
     <title>Tweets</title>
 </head>
 <body>
+<div class="background"></div>
+<header><a href="/"> That's what was found in twitter by <span class="hashtag-word">#{{hashtag}}</span><br> Click here and search again</a></header>
+<div class="tweets-col">
+</div>
+<div class="tweets-col">
+	<div class="count">
+		{% if pos_tweets|length > 0 %}
+			{{pos_tweets|length}} positive tweets
+		{% else %}
+			There were no positive tweets found :( 
+		{% endif %}
+	</div>
 {% for tweet in pos_tweets %}
     <div class="pos-tweets">{{tweet}}</div>
 {% endfor %}
-<br>
+</div>
+<div class="tweets-col">
+		<div class="count">
+		{% if neu_tweets|length > 0 %}
+			{{neu_tweets|length}} neutral tweets
+		{% else %}
+			There were no neutral tweets found :| 
+		{% endif %}
+	</div>
 {% for tweet in neu_tweets %}
     <div class="neu-tweets">{{tweet}}</div>
 {% endfor %}
-<br>
+</div>
+<div class="tweets-col">
+		<div class="count">
+		{% if neg_tweets|length > 0 %}
+			{{neg_tweets|length}} negative tweets
+		{% else %}
+			There were no negative tweets found :) 
+		{% endif %}
+	</div>
 {% for tweet in neg_tweets %}
     <div class="neg-tweets">{{tweet}}</div>
 {% endfor %}
+</div>
 </body>
 </html>
