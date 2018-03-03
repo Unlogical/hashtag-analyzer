@@ -4,17 +4,17 @@ from django.template import RequestContext
 
 from hashtaganalyzer.forms import HashtagForm
 from . import twitter_functions
+from . import analizer
+from . import models
 
 # Create your views here.
 # def input(request):
 #     form = HashtagForm()
 #     return render(request, 'hashtaganalyzer/input.html', {'form': form})
 
-def tweets(request):
-    tweets = twitter_functions.get_tweets('why')
-    return render(request, 'hashtaganalyzer/tweets.html', {'tweets': tweets})
-
-
+# def tweets(request):
+#     tweets = twitter_functions.get_tweets('why')
+#     return render(request, 'hashtaganalyzer/tweets.html', {'tweets': tweets})
 
 
 def search(request):
@@ -23,7 +23,11 @@ def search(request):
         if form.is_valid(): # All validation rules pass
             hashtag =  form.cleaned_data['hashtag']
             tweets = twitter_functions.get_tweets(hashtag)
-            return render(request, 'hashtaganalyzer/tweets.html', {'tweets': tweets}) # Redirect after POST
+            tweets = twitter_functions.clear_tweets(tweets)
+            pos_tweets = analizer.pos_tweets(tweets)
+            neg_tweets = analizer.neg_tweets(tweets)
+            neu_tweets = analizer.neu_tweets(tweets)
+            return render(request, 'hashtaganalyzer/tweets.html', {'pos_tweets': pos_tweets, 'neg_tweets': neg_tweets, 'neu_tweets': neu_tweets}) # Redirect after POST
     else:
         form = HashtagForm() # An unbound form
 

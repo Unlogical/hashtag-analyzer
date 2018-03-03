@@ -1,15 +1,22 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/tweets.css' %}">
     <title>Tweets</title>
 </head>
 <body>
-{% for tweet in tweets %}
-    <div class="tweets">{{tweet}}</div>
-
+{% for tweet in pos_tweets %}
+    <div class="pos-tweets">{{tweet}}</div>
+{% endfor %}
+<br>
+{% for tweet in neu_tweets %}
+    <div class="neu-tweets">{{tweet}}</div>
+{% endfor %}
+<br>
+{% for tweet in neg_tweets %}
+    <div class="neg-tweets">{{tweet}}</div>
 {% endfor %}
 </body>
 </html>

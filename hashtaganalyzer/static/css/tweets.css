@@ -1,5 +1,17 @@
-.tweets {
-	width: 1000px;
-	margin: auto;
-	margin-bottom: 20px;
+
+
+.pos-tweets {
+	margin: 30px;
+	background-color: #afa;
+	width: 300px;
+}
+
+.neu-tweets {
+	background-color: #aaf;
+	width: 300px;
+}
+
+.neg-tweets {
+	background-color: #faa;
+	width: 300px;
 }
