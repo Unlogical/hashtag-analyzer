@@ -1,7 +1,10 @@
-
+import re
 import tweepy
 from hashtagproject.settings import TWITTER_FEED_OPEN_AUTH_SECRET, TWITTER_FEED_CONSUMER_PUBLIC_KEY, \
     TWITTER_FEED_CONSUMER_SECRET, TWITTER_FEED_OPEN_AUTH_TOKEN
+
+
+
 def get_tweets(hashtag):
     consumer_key = TWITTER_FEED_CONSUMER_PUBLIC_KEY
     consumer_secret = TWITTER_FEED_CONSUMER_SECRET
@@ -25,3 +28,20 @@ def get_tweets(hashtag):
         results.append(tweet.full_text)
     return results
 
+
+def clear_tweets(tweets):
+    cleared_tweets = []
+    for tweet in tweets:
+        clear_tweet= ''
+        # while re.search(r'https://\d([A-Z][A-Za-z]+)', tweet)!='':
+        clear_tweet += re.sub(r'https:\/\/t.co\/\S+', '', tweet)
+        cleared_tweets.append(clear_tweet)
+    return cleared_tweets
+
+tweets = get_tweets('bitch')
+for tweet in tweets :
+    print(tweet + '\n')
+
+cleared_tweets = (clear_tweets(tweets))
+for clear_tweet in cleared_tweets:
+    print(clear_tweet + '\n')
