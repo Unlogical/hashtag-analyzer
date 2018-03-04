@@ -1,9 +1,11 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/tweets.css' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico'%}" type="image/x-icon">
+    <script src="{% static 'js/columns.js' %}"></script>
     <title>Tweets</title>
 </head>
 <body>
@@ -11,7 +13,7 @@
 <header><a href="/"> That's what was found in twitter by <span class="hashtag-word">#{{hashtag}}</span><br> Click here and search again</a></header>
 <div class="tweets-col">
 </div>
-<div class="tweets-col">
+<div class="tweets-col pos_tweets_col">
 	<div class="count">
 		{% if pos_tweets|length > 0 %}
 			{{pos_tweets|length}} positive tweets
@@ -23,7 +25,7 @@
     <div class="pos-tweets">{{tweet}}</div>
 {% endfor %}
 </div>
-<div class="tweets-col">
+<div class="tweets-col neu_tweets_col">
 		<div class="count">
 		{% if neu_tweets|length > 0 %}
 			{{neu_tweets|length}} neutral tweets
@@ -35,7 +37,7 @@
     <div class="neu-tweets">{{tweet}}</div>
 {% endfor %}
 </div>
-<div class="tweets-col">
+<div class="tweets-col neg_tweets_col">
 		<div class="count">
 		{% if neg_tweets|length > 0 %}
 			{{neg_tweets|length}} negative tweets
