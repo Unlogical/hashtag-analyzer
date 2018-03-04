@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link rel="shortcut icon" href="{% static 'favicon.ico'%}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Mukta+Malar" rel="stylesheet">
+    <script src="{% static 'js/columns.js' %}"></script>
     <title>Search</title>
 </head>
-<body>
+<body onload="showOneColumn()">
 <header>
     <a href="/">Twitter analyzer</a>
 </header>
     <div class="description">Write some hashtag in the input below and you will see around 100 tweets (may be less), sorted by polarity (positive, neutral, negative)</div>
     <div class="content">
-        <form method="POST" class="search-form">
+        <form method="POST" class="search-form" id="search-form">
             {% csrf_token %}
             <p class="hash">#</p>
             {{ form.hashtag }}
