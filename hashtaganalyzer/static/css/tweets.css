@@ -144,20 +144,22 @@ header a:hover {
 	}
 
 	header {
-		height: 150px;
+		height: 180px;
+		margin-bottom: 50px;
 	}
 
 	header a{
-		font-size: 40px;
+		font-size: 50px;
 	}
 
 	.hashtag-word {
-		font-size: 50px;
+		font-size: 60px;
 	}
 
 	.col_button {
 		display: block;
 		float: left;
+		font-size: 50px;
 		margin-bottom: 30px;
 		border: 0px;
 	}
@@ -180,7 +182,7 @@ header a:hover {
 
 	.small {
 		width: 15%;
-		height: 60px;
+		height: 100px;
 		overflow-x: hidden;
 		overflow-y: hidden;
 		text-overflow: ellipsis;
