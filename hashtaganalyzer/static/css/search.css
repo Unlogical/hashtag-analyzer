@@ -4,6 +4,7 @@ body {
 	background-repeat: no-repeat;
 	overflow-y: hidden;
 	overflow-x: hidden;
+	background-color: #5da;
 	margin: 0;
 	padding: 0;
 	font-family: 'Mukta Malar', sans-serif;
@@ -106,8 +107,9 @@ header a:hover {
 @media(max-width: 1000px) {
 	body {
 		height: 100%;
-		background-image: url("../images/smallwellpaper.jpg");
-		background-size: cover;
+		background-image: url("../images/wellpaper.jpg");
+		background-position: -2000px -300px;
+		background-size: 4600px;
 		background-repeat: no-repeat;
 		overflow-x: hidden;
 		overflow-y: scroll;
@@ -116,16 +118,20 @@ header a:hover {
 	}
 	header {
 		font-size: 120px;
-		height: 500px;
+		width: 120%;
+		height: 300px;
 		font-family: 'Lato', sans-serif;
+		margin-bottom: 50px;
 	}
 	header a{
 		height: 100%;
+		width: 100%;
 		padding-left: 10px;
 	}
 
 	.description {
-		margin-top: -200px;
+		margin-top: 0px;
+		margin-right: -50px;
 		float: right;
 		text-align: right;
 		font-size: 30px;
@@ -138,7 +144,7 @@ header a:hover {
 	}
 	.search-form {
 		width: 900px;
-		margin-left: 0;
+		margin-left: 50px;
 		margin-top: 0;
 	}
 	.search-form input {
