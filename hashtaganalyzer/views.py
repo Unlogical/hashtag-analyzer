@@ -1,11 +1,9 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 from django.template import RequestContext
 
 from hashtaganalyzer.forms import HashtagForm
 from . import twitter_functions
 from . import analizer
-from . import models
 
 # Create your views here.
 # def input(request):
