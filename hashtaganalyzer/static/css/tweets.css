@@ -130,6 +130,18 @@ header a:hover {
 }
 
 @media(max-width: 1000px) {
+	.background {
+		height: 100%;
+		background-color: black;
+		background-position: -200px 0;
+		background-size: 1500px;
+		z-index: -1;
+		margin: 0;
+		padding: 0;
+		background-image: url("../images/mobile.jpg");
+		background-repeat: no-repeat;
+		position: fixed;
+	}
 
 	header {
 		height: 150px;
