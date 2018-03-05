@@ -10,46 +10,48 @@
     <title>Tweets</title>
 </head>
 <body onresize="columns()">
-<div class="background"></div>
-<header><a href="/"> That's what was found in twitter by <span class="hashtag-word">#{{hashtag}}</span><br> Click here and search again</a></header>
-<button type="button" class="pos_button col_button wide" id = "pos_button" onclick="showPosColumn()">{{pos_tweets|length}} positive tweets</button>
-<button type="button" class="neu_button col_button small" id = "neu_button" onclick="showNeuColumn()">{{neu_tweets|length}} neutral tweets</button>
-<button type="button" class="neg_button col_button small" id = "neg_button" onclick="showNegColumn()">{{neg_tweets|length}} negative tweets</button>
-<div class="tweets-col pos_tweets_col" id="pos_col">
-	<div class="count">
-		{% if pos_tweets|length > 0 %}
-			{{pos_tweets|length}} positive tweets
-		{% else %}
-			There were no positive tweets found :( 
-		{% endif %}
+	<div class="all-content">
+		<div class="background"></div>
+		<header><a href="/"> That's what was found in twitter by <span class="hashtag-word">#{{hashtag}}</span><br> Click here and search again</a></header>
+		<button type="button" class="pos_button col_button wide" id = "pos_button" onclick="showPosColumn()">{{pos_tweets|length}} positive tweets</button>
+		<button type="button" class="neu_button col_button small" id = "neu_button" onclick="showNeuColumn()">{{neu_tweets|length}} neutral tweets</button>
+		<button type="button" class="neg_button col_button small" id = "neg_button" onclick="showNegColumn()">{{neg_tweets|length}} negative tweets</button>
+		<div class="tweets-col pos_tweets_col" id="pos_col">
+			<div class="count">
+				{% if pos_tweets|length > 0 %}
+					{{pos_tweets|length}} positive tweets
+				{% else %}
+					There were no positive tweets found :( 
+				{% endif %}
+			</div>
+		{% for tweet in pos_tweets %}
+		    <div class="pos-tweets">{{tweet}}</div>
+		{% endfor %}
+		</div>
+		<div class="tweets-col neu_tweets_col" id = 'neu_col'>
+				<div class="count">
+				{% if neu_tweets|length > 0 %}
+					{{neu_tweets|length}} neutral tweets
+				{% else %}
+					There were no neutral tweets found :| 
+				{% endif %}
+			</div>
+		{% for tweet in neu_tweets %}
+		    <div class="neu-tweets">{{tweet}}</div>
+		{% endfor %}
+		</div>
+		<div class="tweets-col neg_tweets_col" id="neg_col">
+				<div class="count">
+				{% if neg_tweets|length > 0 %}
+					{{neg_tweets|length}} negative tweets
+				{% else %}
+					There were no negative tweets found :) 
+				{% endif %}
+			</div>
+		{% for tweet in neg_tweets %}
+		    <div class="neg-tweets">{{tweet}}</div>
+		{% endfor %}
+		</div>
 	</div>
-{% for tweet in pos_tweets %}
-    <div class="pos-tweets">{{tweet}}</div>
-{% endfor %}
-</div>
-<div class="tweets-col neu_tweets_col" id = 'neu_col'>
-		<div class="count">
-		{% if neu_tweets|length > 0 %}
-			{{neu_tweets|length}} neutral tweets
-		{% else %}
-			There were no neutral tweets found :| 
-		{% endif %}
-	</div>
-{% for tweet in neu_tweets %}
-    <div class="neu-tweets">{{tweet}}</div>
-{% endfor %}
-</div>
-<div class="tweets-col neg_tweets_col" id="neg_col">
-		<div class="count">
-		{% if neg_tweets|length > 0 %}
-			{{neg_tweets|length}} negative tweets
-		{% else %}
-			There were no negative tweets found :) 
-		{% endif %}
-	</div>
-{% for tweet in neg_tweets %}
-    <div class="neg-tweets">{{tweet}}</div>
-{% endfor %}
-</div>
 </body>
 </html>
