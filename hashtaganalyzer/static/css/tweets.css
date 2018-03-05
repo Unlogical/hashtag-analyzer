@@ -144,8 +144,9 @@ header a:hover {
 	}
 
 	header {
-		height: 180px;
+		height: 100%;
 		margin-bottom: 50px;
+		color: rgba(255,255,255, 0.9);
 	}
 
 	header a{
@@ -182,7 +183,7 @@ header a:hover {
 
 	.small {
 		width: 15%;
-		height: 100px;
+		height: 94px;
 		overflow-x: hidden;
 		overflow-y: hidden;
 		text-overflow: ellipsis;
