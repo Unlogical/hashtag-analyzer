@@ -8,6 +8,11 @@ body * {
 	font-family: 'Mukta Malar', sans-serif;
 }
 
+button:focus, input:focus, a:focus{
+	text-decoration: none !important;
+	outline: none !important;
+}
+
 header {
 	width: 100%;
 	height: 80px;
@@ -90,4 +95,82 @@ header a:hover {
 
 .neg-tweets {
 	background-color: rgba(80,0,0, 0.5);
+}
+
+.col_button {
+	width: 32%;
+	padding: 5px 0;
+	font-size: 30px;
+	color: rgba(255,255,255,0.9);
+	display: none;
+}
+
+.pos_button {
+	background-color: rgba(0, 100, 0, 0.6);
+}
+
+.pos_button:hover {
+	background-color: rgba(0, 60, 0, 0.7);
+}
+
+.neu_button {
+	background-color: rgba(20, 20, 20, 0.6);
+}
+
+.neu_button:hover {
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.neg_button {
+	background-color: rgba(100, 0, 0, 0.6);
+}
+
+.neg_button:hover {
+	background-color: rgba(60, 0, 0, 0.7);
+}
+
+@media(max-width: 1000px) {
+
+	header {
+		height: 150px;
+	}
+
+	header a{
+		font-size: 40px;
+	}
+
+	.hashtag-word {
+		font-size: 50px;
+	}
+
+	.col_button {
+		display: block;
+		float: left;
+		margin-bottom: 30px;
+		border: 0px;
+	}
+	.tweets-col {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0, 0.0); 
+		margin-left: 0%;
+		float: left;
+		color: rgba(255,255,255, 0.9);
+		font-size: 20px;
+	}
+
+	.count {
+		display: none;
+	}
+	.wide {
+		width: 70%;
+	}
+
+	.small {
+		width: 15%;
+		height: 60px;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		text-overflow: ellipsis;
+	}
 }

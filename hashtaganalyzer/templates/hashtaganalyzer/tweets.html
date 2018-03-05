@@ -9,12 +9,13 @@
     <script src="{% static 'js/columns.js' %}"></script>
     <title>Tweets</title>
 </head>
-<body>
+<body onresize="columns()">
 <div class="background"></div>
 <header><a href="/"> That's what was found in twitter by <span class="hashtag-word">#{{hashtag}}</span><br> Click here and search again</a></header>
-<div class="tweets-col">
-</div>
-<div class="tweets-col pos_tweets_col">
+<button type="button" class="pos_button col_button wide" id = "pos_button" onclick="showPosColumn()">{{pos_tweets|length}} positive tweets</button>
+<button type="button" class="neu_button col_button small" id = "neu_button" onclick="showNeuColumn()">{{neu_tweets|length}} neutral tweets</button>
+<button type="button" class="neg_button col_button small" id = "neg_button" onclick="showNegColumn()">{{neg_tweets|length}} negative tweets</button>
+<div class="tweets-col pos_tweets_col" id="pos_col">
 	<div class="count">
 		{% if pos_tweets|length > 0 %}
 			{{pos_tweets|length}} positive tweets
@@ -26,7 +27,7 @@
     <div class="pos-tweets">{{tweet}}</div>
 {% endfor %}
 </div>
-<div class="tweets-col neu_tweets_col">
+<div class="tweets-col neu_tweets_col" id = 'neu_col'>
 		<div class="count">
 		{% if neu_tweets|length > 0 %}
 			{{neu_tweets|length}} neutral tweets
@@ -38,7 +39,7 @@
     <div class="neu-tweets">{{tweet}}</div>
 {% endfor %}
 </div>
-<div class="tweets-col neg_tweets_col">
+<div class="tweets-col neg_tweets_col" id="neg_col">
 		<div class="count">
 		{% if neg_tweets|length > 0 %}
 			{{neg_tweets|length}} negative tweets
