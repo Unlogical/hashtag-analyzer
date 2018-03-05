@@ -24,7 +24,7 @@ def get_tweets(hashtag):
     limit = 200
     full_hashtag = '%23' +  hashtag
     results = []
-    for tweet in tweepy.Cursor(api.search, q= full_hashtag + ' -filter:retweets', tweet_mode='extended').items(limit):
+    for tweet in tweepy.Cursor(api.search, q= full_hashtag + ' -filter:retweets', tweet_mode='extended', lang='en').items(limit):
         results.append(tweet.full_text)
     return results
 
