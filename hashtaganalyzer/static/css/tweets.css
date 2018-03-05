@@ -9,10 +9,6 @@ body * {
 	font-family: 'Mukta Malar', sans-serif;
 }
 
-.all-content {
-	overflow-y: scroll;
-}
-
 button:focus, input:focus, a:focus{
 	text-decoration: none !important;
 	outline: none !important;
