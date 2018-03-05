@@ -21,7 +21,7 @@ def get_tweets(hashtag):
     # for tweet in public_tweets:
     #     print(tweet.text)
 
-    limit = 100
+    limit = 200
     full_hashtag = '%23' +  hashtag
     results = []
     for tweet in tweepy.Cursor(api.search, q= full_hashtag + ' -filter:retweets', tweet_mode='extended').items(limit):
@@ -32,14 +32,16 @@ def get_tweets(hashtag):
 def clear_tweets(tweets):
     cleared_tweets = []
     for tweet in tweets:
-        tweet = tweet.replace(r'https:\/\/t.co\/\S+', '')
+        tweet = re.sub(r'https:\/\/t.co\/\S+', '', tweet)
         cleared_tweets.append(tweet)
     return cleared_tweets
 
+
+
 # tweets = get_tweets('bitch')
 # for tweet in tweets :
-#     print(tweet + '\n')
-#
+#      print(tweet + '\n')
+# #tweet = tweet.replace(r'https:\/\/t.co\/\S+', '')
 # cleared_tweets = (clear_tweets(tweets))
 # for clear_tweet in cleared_tweets:
-#     print(clear_tweet + '\n')
+#      print('-----------------' + clear_tweet + '\n')
