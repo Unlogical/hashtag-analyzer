@@ -130,7 +130,25 @@ header a:hover {
 }
 
 @media(max-width: 1000px) {
+	body:before {
+	  content: "";
+	  display: block;
+	  position: fixed;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  z-index: -10;
+	  background: url("../images/mobile.jpg") no-repeat center center;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	}
 	.background {
+		display: none;
+	}
+/*	.background {
 		height: 100%;
 		background-color: black;
 		background-position: -200px 0;
@@ -141,7 +159,7 @@ header a:hover {
 		background-image: url("../images/mobile.jpg");
 		background-repeat: no-repeat;
 		position: fixed;
-	}
+	}*/
 
 	header {
 		height: 100%;
