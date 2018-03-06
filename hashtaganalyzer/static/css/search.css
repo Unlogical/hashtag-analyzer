@@ -113,6 +113,34 @@ header a:hover {
 	color: rgba(255,255,255, 0.9);
 	cursor: pointer;
 }
+.loading {
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.5);
+	color: rgba(0, 255, 255, 0.6);
+	padding-left: 50%;
+	padding-top: 150px;
+	display: none;
+	font-size: 300px;
+}
+
+.visible {
+	display: block;
+}
+
+.invisible {
+	display: none;
+
+}
+
+.center {
+	display: block;
+	margin-left: -150px;
+}
+
 
 @media(max-width: 1000px) {
 	body {
