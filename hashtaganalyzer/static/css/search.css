@@ -23,8 +23,12 @@ body * {
 	font-family: 'Mukta Malar', sans-serif;
 }
 
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px white inset;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: rgba(0,0,0, 0.8) !important;
 }
 button:focus, input:focus, a:focus{
 	text-decoration: none !important;
@@ -98,14 +102,15 @@ header a:hover {
 .search-button {
 	display: block;
 	float: right;
-	width: 200px;
-	height: 70px;
+	width: 50%;
+	height: 80px;
 	font-size: 50px;
 	background-color: rgba(0,0,0, 0.3);
 	color: rgba(255,255,255, 0.8);
 	border: 0px;
-	margin-top: 30px;
+	margin-top: 70px;
 	margin-right: 120px;
+	padding-top: 0px;
 }
 
 .search-button:hover {
