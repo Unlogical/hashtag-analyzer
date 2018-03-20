@@ -23,10 +23,7 @@ def search(request):
             hashtag = hashtag.replace('#', '')
             tweets = twitter_functions.get_tweets(hashtag)
             tweets = twitter_functions.clear_tweets(tweets)
-            pos_tweets = analizer.pos_tweets(tweets)
-            pt = len(pos_tweets)
-            neg_tweets = analizer.neg_tweets(tweets)
-            neu_tweets = analizer.neu_tweets(tweets)
+            pos_tweets, neg_tweets, neu_tweets = analizer.tweets_analyze(tweets)
             return render(request, 'hashtaganalyzer/tweets.html', {'pos_tweets': pos_tweets, 'neg_tweets': neg_tweets, 'neu_tweets': neu_tweets, 'hashtag': hashtag}) # Redirect after POST
     else:
         form = HashtagForm() # An unbound form
